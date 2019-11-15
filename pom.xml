@@ -11,6 +11,7 @@
         <module>leyou-register</module>
         <module>leyou-gateway</module>
         <module>leyou-item</module>
+        <module>leyoucommon</module>
     </modules>
     <packaging>pom</packaging>
 

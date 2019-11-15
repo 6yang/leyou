@@ -4,3 +4,15 @@ spring:
   application:
     name: item-service
   datasource:
+    url: jdbc:mysql://112.124.46.10:3306/leyou
+    username: root
+    password: root
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 5 #5秒钟发送一次心跳
+    lease-expiration-duration-in-seconds: 15 #10秒钟不发送就过期
+mybatis:
+  type-aliases-package: com.leyou.item.pojo
