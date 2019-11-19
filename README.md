@@ -1,3 +1,33 @@
+## day08总结
+
+### 新增品牌
+
+**页面**
+ 	qs工具 把json对象转化为查询字符串，把字符串转化为查询json对象
+
+ 	校验规则：rules = ”nameRules“
+
+​	nameRules[	
+
+​		v=>!!v||"",
+
+​		v=>v.length>1 || ""
+
+​	]
+
+​	执行校验 this.$refs.myBrandForm.validate() 或者 this.valid
+
+​	自定义组件
+
+​		级联
+
+​		文件上传
+
+**后台**
+
+	1. 添加品牌
+ 	2. 添加品牌和分类的中间表
+
 ### 文件上传
 
 **controller**
@@ -37,3 +67,10 @@
 ​		响应数据
 
 ​		responseEntity.status(201).body(url);	
+
+### 分布式文件系统 FastDFS
+
+- client upload-service
+- tracker 跟踪服务器
+- storage 存储服务器
+
