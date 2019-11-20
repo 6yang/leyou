@@ -42,7 +42,6 @@ public class BrandServiceImpl implements BrandService {
             example.setOrderByClause(sortBy + ( desc ? " desc" : " asc"));
         }
         List<Brand> brands = this.brandMapper.selectByExample(example);
-        System.out.println(brands);
         PageInfo<Brand> pageInfo = new PageInfo<>(brands);
 
         return new PageResult<>(pageInfo.getTotal(),pageInfo.getList());
