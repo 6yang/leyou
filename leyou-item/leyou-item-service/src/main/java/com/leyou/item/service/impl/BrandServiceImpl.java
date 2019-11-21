@@ -60,4 +60,14 @@ public class BrandServiceImpl implements BrandService {
         cids.forEach(cid -> this.brandMapper.saveCategoryAndBrand(cid,brand.getId()));
 
     }
+
+    /**
+     * 根据分类id查询 分类集合
+     * @Param: [cid]
+     * @Return:
+     **/
+    @Override
+    public List<Brand> queryBrandsByCid(Long cid) {
+        return this.brandMapper.selectByCid(cid);
+    }
 }
