@@ -1,0 +1,17 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: search-service
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 112.124.46.10:9300
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka/
+    registry-fetch-interval-seconds: 10 #拉取服务的时间
+  instance:
+    lease-renewal-interval-in-seconds: 5  #5秒一次心跳
+    lease-expiration-duration-in-seconds: 15     #15秒不发送就过期
