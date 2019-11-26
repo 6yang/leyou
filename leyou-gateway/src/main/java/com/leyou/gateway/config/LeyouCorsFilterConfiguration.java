@@ -15,6 +15,7 @@ public class LeyouCorsFilterConfiguration {
         CorsConfiguration configuration = new CorsConfiguration();
         //添加允许跨域的域名，可以设置多个 ， 如果允许设置cookie 一定不可以设置为*
         configuration.addAllowedOrigin("http://manage.leyou.com");
+        configuration.addAllowedOrigin("http://www.leyou.com");
         //允许携带cookie
         configuration.setAllowCredentials(true);
         //允许所有请求方法跨域访问
