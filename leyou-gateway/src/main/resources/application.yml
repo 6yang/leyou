@@ -13,5 +13,11 @@ zuul:
   routes:
     item-service: /item/** #添加商品微服务的路由
     search-service: /search/** #路由到搜索微服务
+  host:
+    connect-timeout-millis: 15000
+    socket-timeout-millis: 60000
+ribbon:        #设置ribbon的超时时间小于zuul的超时时间
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
 
 
