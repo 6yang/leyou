@@ -3,6 +3,7 @@ package com.leyou.item.service;
 import com.leyou.common.pojo.PageResult;
 import com.leyou.item.bo.SpuBo;
 import com.leyou.item.pojo.Sku;
+import com.leyou.item.pojo.Spu;
 import com.leyou.item.pojo.SpuDetail;
 
 import java.util.List;
@@ -43,4 +44,11 @@ public interface GoodsService {
      * @Return:
      **/
     void updateGoods(SpuBo spuBo);
+
+    /**
+     * 根据spuId查询spu
+     * @Param: [id]
+     * @Return:
+    **/
+    Spu querySpuById(Long id);
 }

@@ -54,5 +54,19 @@ public class SpecificationController {
         return ResponseEntity.ok(params);
     }
 
+    /**
+     * 根据cid 查询规格参数组的集合
+     * @Param: [cid]
+     * @Return:
+    **/
+    @GetMapping("group/param/{cid}")
+    public ResponseEntity<List<SpecGroup>> queryGroupsWithParam(@PathVariable("cid")Long cid){
+        List<SpecGroup> groups =  this.specificationService.queryGroupsWithParam(cid);
+        if(CollectionUtils.isEmpty(groups)){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(groups);
+    }
+
 
 }

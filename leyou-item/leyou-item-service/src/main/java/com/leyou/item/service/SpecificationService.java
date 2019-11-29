@@ -19,6 +19,11 @@ public interface SpecificationService {
      * @Return:
      **/
     List<SpecParam> queryParams(Long gid, Long cid, Boolean generic, Boolean searching);
-    
 
+    /**
+     * 根据cid 查询规格参数组的集合
+     * @Param: [cid]
+     * @Return:
+     **/
+    List<SpecGroup> queryGroupsWithParam(Long cid);
 }

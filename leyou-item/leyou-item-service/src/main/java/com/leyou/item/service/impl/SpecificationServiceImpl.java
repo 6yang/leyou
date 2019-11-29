@@ -44,4 +44,19 @@ public class SpecificationServiceImpl implements SpecificationService {
         return this.specParamMapper.select(record);
     }
 
+    /**
+     * 根据cid 查询规格参数组的集合
+     * @Param: [cid]
+     * @Return:
+     **/
+    @Override
+    public List<SpecGroup> queryGroupsWithParam(Long cid) {
+        List<SpecGroup> groups = this.queryGroupsByCid(cid);
+        groups.forEach(group->{
+            List<SpecParam> params = this.queryParams(group.getId(), null, null, null);
+            group.setParams(params);
+        });
+        return groups;
+    }
+
 }
