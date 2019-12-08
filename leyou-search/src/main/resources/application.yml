@@ -9,6 +9,11 @@ spring:
       cluster-nodes: 112.124.46.10:9300
   jackson:
     default-property-inclusion: non_null  #过滤掉传到前端键值为null的字段
+  rabbitmq: #配置rabbitmaq
+    host: 112.124.46.10
+    virtual-host: /leyou
+    username: leyou
+    password: leyou
 eureka:
   client:
     service-url:
@@ -17,3 +22,6 @@ eureka:
   instance:
     lease-renewal-interval-in-seconds: 5  #5秒一次心跳
     lease-expiration-duration-in-seconds: 15     #15秒不发送就过期
+ribbon: #在第一次往elasticsearch 中添加的时候设置  不然就会超时错误
+  ReadTimeout: 60000
+  ConnectTimeout: 60000

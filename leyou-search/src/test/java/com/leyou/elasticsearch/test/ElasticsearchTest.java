@@ -36,13 +36,13 @@ public class ElasticsearchTest {
         this.elasticsearchTemplate.createIndex(Goods.class);
         this.elasticsearchTemplate.putMapping(Goods.class);
         Integer page =1;
-        Integer rows =10;
+        Integer rows =50;
 
         do{
             // 获取分页结果集
             PageResult<SpuBo> result = this.goodsClient.querySpuByPage(null, null, page, rows);
             // 获取当前页的数据
-
+            System.out.println(result);
             List<SpuBo> items = result.getItems();
 
             //处理List<SpuBo> -》 List<Goods>
@@ -59,7 +59,7 @@ public class ElasticsearchTest {
             this.goodsRepository.saveAll(goodsList);
             rows = items.size();
             page++;
-        }while (rows == 10);
+        }while (rows == 50);
 
     }
 }

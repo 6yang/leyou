@@ -285,4 +285,24 @@ public class SearchService {
             return map;
         }).collect(Collectors.toList());
     }
+
+    /**
+     * rabbitmq 通知更新数据
+     * @Param: [id]
+     * @Return:
+    **/
+    public void save(Long id) throws IOException {
+        Spu spu = this.goodsClient.querySpuById(id);
+        Goods goods = this.buildGoods(spu);
+        this.goodsRepository.save(goods);
+    }
+
+    /**
+     * rabbitmq 通知删除数据
+     * @Param: [id]
+     * @Return:
+    **/
+    public void delete(Long id) {
+        this.goodsRepository.deleteById(id);
+    }
 }
