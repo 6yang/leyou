@@ -190,6 +190,16 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     /**
+     * 根据skuId查询sku
+     * @Param: [id]
+     * @Return:
+     **/
+    @Override
+    public Sku querySkuById(Long skuId) {
+        return this.skuMapper.selectByPrimaryKey(skuId);
+    }
+
+    /**
      * 更根据SpuId查询sku集合
      * @Param: [SpuId]
      * @Return:
